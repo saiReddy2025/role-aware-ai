@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Codebase Teammate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Codebase Teammate</h1>
+            <p>Upload your codebase and get role-specific insights instantly</p>
+        </div>
+        
+        <div class="main-panel">
+            <div class="top-bar">
+                <div class="role-selector">
+                    <button class="role-btn active" data-role="backend">Backend Engineer</button>
+                    <button class="role-btn" data-role="frontend">Frontend Developer</button>
+                    <button class="role-btn" data-role="ai">AI Engineer</button>
+                    <button class="role-btn" data-role="pm">Product Manager</button>
+                </div>
+                <div style="margin-left: auto;">
+                    <span id="currentRole">👨‍💻 Backend Engineer View</span>
+                </div>
+            </div>
+
+            <div class="upload-area" id="uploadArea">
+                <div>
+                    <h3>📁 Drop your codebase files here</h3>
+                    <p>Supports: .js, .py, .java, .cpp, .html, .css, .json, .md, .txt</p>
+                    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Choose Files</button>
+                    <input type="file" id="fileInput" class="file-input" multiple accept=".js,.py,.java,.cpp,.html,.css,.json,.md,.txt,.jsx,.ts,.tsx,.php,.rb,.go,.rs">
+                </div>
+            </div>
+            
+            <div class="file-list" id="fileList" style="display: none;"></div>
+            
+            <div class="content-grid">
+                <div class="panel">
+                    <h3>📊 Analysis Results</h3>
+                    <div class="analysis-output" id="analysisOutput">
+                        <p style="color: #666; text-align: center; margin-top: 50px;">Upload files to see role-specific analysis</p>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <h3>📈 Interactive Diagrams</h3>
+                    <div class="diagram-container" id="diagramContainer">
+                        <p style="color: #666; text-align: center; margin-top: 50px;">Diagrams will appear here after analysis</p>
+                    </div>
+                </div>
+
+                <div class="panel insights-panel">
+                    <h3>🎯 Role-Specific Insights</h3>
+                    <div class="analysis-output" id="insightsOutput">
+                        <p style="color: #666; text-align: center; margin-top: 50px;">Detailed insights and recommendations will appear here</p>
+                    </div>
+                    <div class="metrics-grid" id="metricsGrid"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
